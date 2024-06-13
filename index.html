@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Standard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style id="theme-style"></style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <a href="https://www.avex-sg.com/" target="_blank">
+                    <img src="https://www.avex-sg.com/uploadfiles/732/ABOUT/2.png" alt="Logo" class="logo">
+                </a>
+                <h1 class="text-center flex-grow-1">Coding Standard</h1>
+                <div class="theme-select">
+                    <label for="theme-select">選擇顏色主題:</label>
+                    <select id="theme-select" class="form-control d-inline-block" style="width: auto;">
+                        <option value="dark">深色主題</option>
+                        <option value="light">淺色主題</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="content-container">
+        <aside>
+            <nav class="nav flex-column" id="sidebar">
+                <div class="card">
+                    <div class="card-header">目錄</div>
+                    <div class="card-body">
+                        <a class="nav-link" href="#introduction">說明</a>
+                        <a class="nav-link" href="#classes-and-interfaces">類和介面</a>
+                        <a class="nav-link ml-3" href="#classes">類 (Classes)</a>
+                        <a class="nav-link ml-3" href="#interfaces">介面 (Interfaces)</a>
+                        <a class="nav-link" href="#enums">列舉 (Enums)</a>
+                        <a class="nav-link" href="#structs">結構 (Structs)</a>
+                        <a class="nav-link" href="#methods">方法 (Methods)</a>
+                        <a class="nav-link" href="#properties">屬性 (Properties)</a>
+                        <a class="nav-link" href="#modifiers">修飾詞</a>
+                        <a class="nav-link ml-3" href="#private">私有 (Private)</a>
+                        <a class="nav-link ml-3" href="#protected">受保護 (Protected)</a>
+                        <a class="nav-link ml-3" href="#internal">內部 (Internal)</a>
+                        <a class="nav-link ml-3" href="#protected-internal">受保護內部 (Protected Internal)</a>
+                        <a class="nav-link ml-3" href="#private-protected">私有受保護 (Private Protected)</a>
+                        <a class="nav-link" href="#constants">常數 (Constants)</a>
+                        <a class="nav-link" href="#events">事件 (Events)</a>
+                        <a class="nav-link" href="#local-variables-and-parameters">區域變量和參數</a>
+                        <a class="nav-link" href="#comprehensive-example">綜合範例</a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <main>
+            <section id="introduction">
+                <h2 class="section-title">說明</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>此份文件目的是定義一套程式命名原則，使得程式碼具備一致性、可維護性。不同人員修改程式時更容易理解程式碼，使得焦點集中於開發新功能與快速找出問題錯誤，避免程式難以理解、花時間猜測程式內容、詢問前一維護者等問題。除此之外，文件中加入邏輯技巧，避免很多莫名其妙的 bug 產生、減少花時間去 debug。透過此項方法提高維護品質、降低維護上的困擾。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="classes-and-interfaces">
+                <h2 class="section-title">類和介面 (Classes and Interfaces)</h2>
+                <section id="classes">
+                    <h3 class="section-subtitle">類 (Classes)</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>），每個單詞的首字母大寫。 (Use <span class="keyword">PascalCase</span>, with the first letter of each word capitalized.)</p>
+                            <p>範例 (Examples): <code>Customer</code>, <code>OrderProcessor</code>, <code>DataManager</code></p>
+                        </div>
+                    </div>
+                </section>
+                <section id="interfaces">
+                    <h3 class="section-subtitle">介面 (Interfaces)</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>），並以大寫字母 <code>I</code> 開頭。 (Use <span class="keyword">PascalCase</span>, prefixed with the letter <code>I</code>.)</p>
+                            <p>範例 (Examples): <code>IRepository</code>, <code>ILogger</code></p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section id="enums">
+                <h2 class="section-title">列舉 (Enums)</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。 (Use <span class="keyword">PascalCase</span>.)</p>
+                        <pre><code><span class="keyword">public enum</span> Color {<br>    <span class="keyword">Red</span>,<br>    <span class="keyword">Green</span>,<br>    <span class="keyword">Blue</span><br>}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="structs">
+                <h2 class="section-title">結構 (Structs)</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。 (Use <span class="keyword">PascalCase</span>.)</p>
+                        <p>範例 (Examples): <code>Point</code>, <code>Rectangle</code></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="methods">
+                <h2 class="section-title">方法 (Methods)</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。通常是動詞或動詞短語。 (Use <span class="keyword">PascalCase</span>. Typically verbs or verb phrases.)</p>
+                        <p>範例 (Examples): <code>CalculateTotal</code>, <code>SaveChanges</code>, <code>GetCustomerData</code></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="properties">
+                <h2 class="section-title">屬性 (Properties)</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。通常是名詞或名詞短語。 (Use <span class="keyword">PascalCase</span>. Typically nouns or noun phrases.)</p>
+                        <p>範例 (Examples): <code>FirstName</code>, <code>OrderDate</code>, <code>TotalAmount</code></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="modifiers">
+                <h2 class="section-title">修飾詞 (Modifiers)</h2>
+                <section id="private">
+                    <h3 class="section-subtitle">私有 (Private)</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>使用駝峰命名法（<span class="keyword">camelCase</span>），並以下劃線 <code>_</code> 開頭。 (Use <span class="keyword">camelCase</span>, prefixed with an underscore <code>_</code>.)</p>
+                            <p>範例 (Examples): <code>_totalAmount</code>, <code>_customerName</code></p>
+                        </div>
+                    </div>
+                </section>
+                <section id="protected">
+                    <h3 class="section-subtitle">受保護 (Protected)</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。 (Use <span class="keyword">PascalCase</span>.)</p>
+                            <p>範例 (Examples): <code>ProtectedField</code></p>
+                        </div>
+                    </div>
+                </section>
+                <section id="internal">
+                    <h3 class="section-subtitle">內部 (Internal)</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。 (Use <span class="keyword">PascalCase</span>.)</p>
+                            <p>範例 (Examples): <code>InternalField</code></p>
+                        </div>
+                    </div>
+                </section>
+                <section id="protected-internal">
+                    <h3 class="section-subtitle">受保護內部 (Protected Internal)</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。 (Use <span class="keyword">PascalCase</span>.)</p>
+                            <p>範例 (Examples): <code>ProtectedInternalField</code></p>
+                        </div>
+                    </div>
+                </section>
+                <section id="private-protected">
+                    <h3 class="section-subtitle">私有受保護 (Private Protected)</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。 (Use <span class="keyword">PascalCase</span>.)</p>
+                            <p>範例 (Examples): <code>PrivateProtectedField</code></p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section id="constants">
+                <h2 class="section-title">常數 (Constants)</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。通常是名詞或名詞短語，並使用 <code>const</code> 關鍵字定義。 (Use <span class="keyword">PascalCase</span>. Typically nouns or noun phrases, defined using the <code>const</code> keyword.)</p>
+                        <p>範例 (Examples): <code>MaxValue</code>, <code>DefaultTimeout</code></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="events">
+                <h2 class="section-title">事件 (Events)</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>使用帕斯卡命名法（<span class="keyword">PascalCase</span>）。通常是名詞或名詞短語，表示動作或狀態的變化。 (Use <span class="keyword">PascalCase</span>. Typically nouns or noun phrases representing actions or state changes.)</p>
+                        <p>範例 (Examples): <code>DataReceived</code>, <code>PropertyChanged</code></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="local-variables-and-parameters">
+                <h2 class="section-title">區域變量和參數 (Local Variables and Parameters)</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p>使用駝峰命名法（<span class="keyword">camelCase</span>）。名稱應該簡潔且有意義。 (Use <span class="keyword">camelCase</span>. Names should be concise and meaningful.)</p>
+                        <p>範例 (Examples): <code>orderCount</code>, <code>customerName</code>, <code>totalAmount</code></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="comprehensive-example">
+                <h2 class="section-title">綜合範例 (Comprehensive Example)</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <pre><code><span class="keyword">public interface</span> ILogger
+{
+    <span class="keyword">void</span> Log(<span class="keyword">string</span> message);
+}
+
+<span class="keyword">public enum</span> LogLevel
+{
+    Debug,
+    Info,
+    Warn,
+    Error,
+    Fatal
+}
+
+<span class="keyword">public struct</span> Point
+{
+    <span class="keyword">public int</span> X { <span class="keyword">get; set;</span> }
+    <span class="keyword">public int</span> Y { <span class="keyword">get; set;</span> }
+}
+
+<span class="keyword">public class</span> ExampleClass
+{
+    <span class="comment">// Private field</span>
+    <span class="keyword">private string</span> _privateField;
+
+    <span class="comment">// Protected field</span>
+    <span class="keyword">protected string</span> _protectedField;
+
+    <span class="comment">// Internal field</span>
+    <span class="keyword">internal string</span> InternalField;
+
+    <span class="comment">// Public property</span>
+    <span class="keyword">public string</span> PublicProperty { <span class="keyword">get; set;</span> }
+
+    <span class="comment">// Constant</span>
+    <span class="keyword">public const int</span> MaxValue = <span class="number">100</span>;
+
+    <span class="comment">// Event</span>
+    <span class="keyword">public event</span> EventHandler DataReceived;
+
+    <span class="comment">// Method</span>
+    <span class="keyword">public void</span> PublicMethod() { }
+
+    <span class="comment">// Protected method</span>
+    <span class="keyword">protected void</span> ProtectedMethod() { }
+
+    <span class="comment">// Internal method</span>
+    <span class="keyword">internal void</span> InternalMethod() { }
+
+    <span class="comment">// Private method</span>
+    <span class="keyword">private void</span> PrivateMethod() { }
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

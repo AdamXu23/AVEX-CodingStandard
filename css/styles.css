@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 60px; /* Adjusted to account for fixed header */
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: inherit;
+    padding: 10px 0;
+}
+
+header .header-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.content-container {
+    display: flex;
+}
+
+aside {
+    width: 250px;
+    padding: 20px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+main {
+    flex: 1;
+    margin-left: 270px;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #dcdcaa;
+    font-size: 24px;
+}
+
+.section-title {
+    margin-top: 40px;
+    color: #569cd6;
+}
+
+.section-subtitle {
+    margin-top: 30px;
+    color: #9cdcfe;
+}
+
+.card {
+    margin-bottom: 20px;
+    background-color: #252526;
+    border-color: #3c3c3c;
+}
+
+.card-header {
+    background-color: #2d2d30;
+    color: #dcdcaa;
+    border-color: #3c3c3c;
+}
+
+.card-body {
+    color: #dcdcdc;
+}
+
+code {
+    background-color: #1e1e1e;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #9cdcfe;
+}
+
+pre {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 4px;
+    overflow: auto;
+    color: #dcdcaa;
+}
+
+.keyword {
+    color: #569cd6;
+}
+
+.comment {
+    color: #608b4e;
+}
+
+.string {
+    color: #d69d85;
+}
+
+.number {
+    color: #b5cea8;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-select {
+    margin-left: auto;
+}
+
+#sidebar .nav-link {
+    color: #dcdcdc;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+#sidebar .nav-link:hover {
+    color: #ffffff;
+}
+
+#sidebar .nav-link.ml-3 {
+    padding-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        flex-basis: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .theme-select {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    aside {
+        width: 100%;
+        position: relative;
+        top: auto;
+        bottom: auto;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
