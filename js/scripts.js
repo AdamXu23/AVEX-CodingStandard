@@ -84,6 +84,12 @@ $(document).ready(function() {
                     #sidebar .nav-link.ml-3 {
                         padding-left: 1.5rem;
                     }
+                    .print-icon {
+                        height: 30px;
+                        margin-left: 10px;
+                        cursor: pointer;
+                        color: #ffffff; 
+                    }
                     @media (max-width: 768px) {
                         h1 {
                             flex-basis: 100%;
@@ -192,6 +198,12 @@ $(document).ready(function() {
                     #sidebar .nav-link.ml-3 {
                         padding-left: 1.5rem;
                     }
+                    .print-icon {
+                        height: 30px;
+                        margin-left: 10px;
+                        cursor: pointer;
+                        color: #000000; 
+                    }
                     @media (max-width: 768px) {
                         h1 {
                             flex-basis: 100%;
@@ -227,5 +239,10 @@ $(document).ready(function() {
         $('html, body').animate({
             scrollTop: $(target).offset().top - $('header').outerHeight() // Adjust for fixed header height
         }, 500);
+    });
+
+    // Print functionality
+    $('#print-button').on('click', function() {
+        window.print();
     });
 });
